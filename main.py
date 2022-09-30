@@ -7,6 +7,7 @@ from end_page import *
 from draw import *
 from power_bar import *
 pygame.font.init()
+pygame.init()
 
 WINDOW = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("GOLF HERO")
