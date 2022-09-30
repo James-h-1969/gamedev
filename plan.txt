@@ -1,10 +1,43 @@
 ~~~~~~~~~~~~~~~~~~~~~~   PLAN FOR THE GAME JAM  ~~~~~~~~~~~~~~~~~~~~~~~~~~
-    -> START SCREEN <-
+
+    --->  GENERAL POINTS  <----
+
+        .how do we want to integrate the theme?
+            IDEAS:
+                ~ gravity changes
+                ~ two player (take turns with shots)
+                ~ for on edge maybe in the sky and when you fall down the bottom it goes back to the top
+            FINAL CHOICE:
+                ~ 
+
+        .
+
+    ---> EACH PERSON TO DO <-----
     
+        stinky pete:
 
-    -> MAPS <-
-        . make a function that gets the input of each map and turns it into a bunch of rects.
-        . put rects into list depending on the type of material (eg. water, brick, sand, etc.)
-        . also need to figure out something for if it hits the side of a rect or the top. 
+        pedro's daughter:
 
-    -> BALL PHSYICS <-
+        @vikram.vish:
+
+        yung nabel:
+        
+        King Hoc: 
+
+    
+    ----> POTENTIAL MODULES <-----
+    
+        -> START SCREEN <-
+            . Cool design that shows off the theme
+            . seperate while loop that we can continually run, when start is pressed we break the while loop and start the rest of the game.
+            . pixel art or vectors?
+            . should we overlay buttons or make it more dynamic (eg we could have if you hover over the start it expands in size)
+            . start game, help, about us, etc.
+
+        -> MAPS <-
+            . make a function that gets the input of each map and turns it into a bunch of rects.
+            . put rects into list depending on the type of material (eg. water, brick, sand, etc.)
+            . also need to figure out something for if it hits the side of a rect or the top. 
+
+        -> BALL PHSYICS <-
+            . need to figure out 
