@@ -1,10 +1,11 @@
 import pygame
+import math
 from constants import *
 
 class Draw():
     def __init__(self):
         pass
-    def draw_window(self, WINDOW, ball):
+    def draw_window(self, WINDOW, ball, power):
         #background
         WINDOW.fill(BABY_BLUE)
         
@@ -16,8 +17,8 @@ class Draw():
             pygame.draw.line(WINDOW, RED, ball.center, ball.center + ball.angle_line_vect, 3)
         
         #power
-        # pygame.draw.rect(window, WHITE, power.bounding_rect)
-        # pygame.draw.rect(window, power.colour, power.rect)
+        pygame.draw.rect(WINDOW, WHITE, power.bounding_rect)
+        pygame.draw.rect(WINDOW, power.colour, power.rect)
 
         #score
         # score = SCORE_FONT.render("Stroke: " + str(ball.current_score), 1, BLACK)

@@ -9,7 +9,7 @@ from power_bar import *
 pygame.font.init()
 
 WINDOW = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-
+pygame.display.set_caption("GOLF HERO")
 
 def main():
     start_page = StartPage()
@@ -22,7 +22,6 @@ def main():
     #start_page.startPage_main(WINDOW) 
     level.levels_main(WINDOW, ball, draw, power)
     #end_page.endPage_main(WINDOW)
-
     pygame.quit()
 
 if __name__ == "__main__":
