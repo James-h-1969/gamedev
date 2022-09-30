@@ -7,7 +7,7 @@ class Levels():
         self.running = False
         self.clock = pygame.time.Clock()
 
-    def levels_main(self):
+    def levels_main(self, WINDOW):
         self.running = True
         while self.running:
             self.clock.tick(FPS)
@@ -15,6 +15,7 @@ class Levels():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-
+        WINDOW.fill(WHITE)
+        pygame.display.update()
 
 

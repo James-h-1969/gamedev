@@ -45,7 +45,7 @@
 
 
     ---->  GIT STUFF  <-----
-    
+
         .setup
         git clone https....     <- this puts all the files in the repository in the folder you want, and means you can change STUFF
         
@@ -53,6 +53,6 @@
         git pull                <- this puts any change that any else has made from github to your files   
         
         .use
-        git add .               <- this signals what you want to update. Easiest thing is to put . and it will update everything
-        git commit -m added_stuff  <- every so often, commit your changes with a message of what you have done so people know
-        git push                <- do this at the end of a session to put all your changes on github.
+        git add .                     <- this signals what you want to update. Easiest thing is to put . and it will update everything
+        git commit -m added_stuff     <- every so often, commit your changes with a message of what you have done so people know
+        git push                      <- do this at the end of a session to put all your changes on github.

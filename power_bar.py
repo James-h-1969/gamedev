@@ -5,4 +5,4 @@ class PowerBar():
         self.power = 0
 
     def current_power_bar(self):
-        pass
+        self.rect = pygame.Rect(20, 560, )

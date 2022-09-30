@@ -11,8 +11,8 @@ def main():
     start_page = StartPage()
     levels = Levels()
     
-    start_page.startPage_main() 
-    levels.levels_main()
+    start_page.startPage_main(WINDOW) 
+    levels.levels_main(WINDOW)
     pygame.quit()
 
 if __name__ == "__main__":
