@@ -1,8 +1,12 @@
 import pygame
 import sys
+import os
 from constants import *
 
 
+# LOAD IMAGES
+background = pygame.image.load(os.path.join('img', 'end-background.png'))
+background = background.convert()
 WINDOW = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 class EndPage():
@@ -18,7 +22,8 @@ class EndPage():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-            WINDOW.fill(BLUE)
+            WINDOW.blit(background, (0,0))
+            pygame.display.flip()
             pygame.display.update()
                 
 
