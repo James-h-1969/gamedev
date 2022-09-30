@@ -8,8 +8,11 @@ pygame.font.init()
 WINDOW = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 def main():
-    StartPage.startPage_main() 
-    Levels.levels_main()
+    start_page = StartPage()
+    levels = Levels()
+    
+    start_page.startPage_main() 
+    levels.levels_main()
     pygame.quit()
 
 if __name__ == "__main__":
