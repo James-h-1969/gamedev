@@ -16,7 +16,10 @@ class EndPage():
     def __init__(self):
         self.running = True
         self.clock = pygame.time.Clock()
+        self.shots = 0
 
+    def set_shots(self, shots):
+        self.shots = shots
     
     def endPage_main(self, WINDOW):
         while self.running:
@@ -30,8 +33,4 @@ class EndPage():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-            
-                
 
-trial = EndPage()
-trial.endPage_main(WINDOW)
