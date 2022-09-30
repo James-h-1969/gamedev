@@ -9,7 +9,7 @@ class Ball():
         self.position = pygame.Vector2(x, y)
         self.angle_line_vect = pygame.Vector2(1, 1)
         self.initial_flight_speed = 0
-        self.anti_grav = False:
+        self.anti_grav = False
         self.x_speed = 0
         self.y_speed = 0
 
