@@ -2,6 +2,9 @@ import pygame
 import sys
 from constants import *
 
+
+WINDOW = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
 class EndPage():
     def __init__(self):
         self.running = True
@@ -15,6 +18,9 @@ class EndPage():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
-            WINDOW.fill(WHITE)
+            WINDOW.fill(BLUE)
             pygame.display.update()
                 
+
+trial = EndPage()
+trial.endPage_main(WINDOW)
