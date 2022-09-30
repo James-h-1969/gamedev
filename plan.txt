@@ -1,0 +1,10 @@
+~~~~~~~~~~~~~~~~~~~~~~   PLAN FOR THE GAME JAM  ~~~~~~~~~~~~~~~~~~~~~~~~~~
+    -> START SCREEN <-
+    
+
+    -> MAPS <-
+        . make a function that gets the input of each map and turns it into a bunch of rects.
+        . put rects into list depending on the type of material (eg. water, brick, sand, etc.)
+        . also need to figure out something for if it hits the side of a rect or the top. 
+
+    -> BALL PHSYICS <-
