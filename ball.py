@@ -9,7 +9,7 @@ class Ball():
         self.position = pygame.Vector2(x, y)
         self.angle_line_vect = pygame.Vector2(1, 1)
         self.initial_flight_speed = 0
-        self.anti_grav = False:
+        self.anti_grav = False
         self.x_speed = 0
         self.y_speed = 0
 
@@ -28,7 +28,7 @@ class Ball():
 
     def setup_movement(self):
         self.x_speed = self.initial_flight_speed * math.cos(self.angle_to_mouse)
-        self.y_speed = self.initial_flight_speed * math.sin(self.angle_line_vect)
+        self.y_speed = abs(self.initial_flight_speed * math.sin(self.angle_to_mouse))
 
     def movement(self):
         if not self.anti_grav:
