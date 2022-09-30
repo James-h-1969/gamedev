@@ -13,7 +13,7 @@
         .
 
     ---> EACH PERSON TO DO <-----
-    
+
         stinky pete:
 
         pedro's daughter:
@@ -40,4 +40,4 @@
             . also need to figure out something for if it hits the side of a rect or the top. 
 
         -> BALL PHSYICS <-
-            . need to figure out 
+            . need to figure out for changing the gravity how that is going to work
