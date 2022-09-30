@@ -8,6 +8,7 @@ class Levels():
         self.running = False
         self.clock = pygame.time.Clock()
         self.space_down = False
+        self.shots = 0
 
     def levels_main(self, WINDOW, ball, draw, power):
         self.running = True
@@ -32,7 +33,7 @@ class Levels():
                     power.strength = 0
                     ball.in_flight = True
             if ball.in_flight:
-                if ball.position.y - ball.y_speed <= SCREEN_HEIGHT//2:
+                if ball.position.y - ball.y_speed <= SCREEN_HEIGHT//2 or (ball.direction > 0 and ball.x_speed > 0) or (ball.direction < 0 and ball.x_speed < 0):
                     ball.movement()
                 else:
                     ball.in_flight = False

@@ -8,6 +8,7 @@ FPS = 60
 
 ###BALL###
 BALL_RADIUS = 5
+FRICTION = 0.4
 
 
 ###POWER_BAR###
