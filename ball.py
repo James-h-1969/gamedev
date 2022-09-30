@@ -44,11 +44,14 @@ class Ball():
             self.x_speed = self.x_speed * -1
             self.direction = self.direction * - 1
 
-        if self.direction > 0 and self.position.y - self.y_speed >= SCREEN_HEIGHT//2:
+        if self.direction > 0 and self.position.y - self.y_speed >= SCREEN_HEIGHT//2 - 20:
             self.x_speed -= FRICTION
-        elif self.direction < 0 and self.position.y - self.y_speed >= SCREEN_HEIGHT//2:
+        elif self.direction < 0 and self.position.y - self.y_speed >= SCREEN_HEIGHT//2 - 20:
             self.x_speed += FRICTION
 
         self.position.x += self.x_speed
         if self.position.y - self.y_speed <= SCREEN_HEIGHT//2:
+            self.position.y -= self.y_speed
+        else:
+            self.y_speed = self.y_speed * -1 * 0.5
             self.position.y -= self.y_speed

@@ -34,7 +34,7 @@ class Levels():
                     self.shots += 1
                     ball.in_flight = True
             if ball.in_flight:
-                if ball.position.y - ball.y_speed <= SCREEN_HEIGHT//2 or (ball.direction > 0 and ball.x_speed > 0) or (ball.direction < 0 and ball.x_speed < 0):
+                if (ball.direction > 0 and ball.x_speed > 0) or (ball.direction < 0 and ball.x_speed < 0):
                     ball.movement()
                 else:
                     ball.in_flight = False
