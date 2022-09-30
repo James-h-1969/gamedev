@@ -8,22 +8,22 @@
                 ~ two player (take turns with shots)
                 ~ for on edge maybe in the sky and when you fall down the bottom it goes back to the top
             FINAL CHOICE:
-                ~ 
+                ~ GRAVITY
 
         .
 
     ---> EACH PERSON TO DO <-----
 
         stinky pete:
-
+            -> map rects
         pedro's daughter:
-
+            -> map visuals
         @vikram.vish:
-
+            -> Start screen
         yung nabel:
-        
+            -> End screen
         King Hoc: 
-
+            -> BALL stuff
     
     ----> POTENTIAL MODULES <-----
     
