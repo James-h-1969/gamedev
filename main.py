@@ -2,14 +2,15 @@ import pygame
 from constants import *
 from start_page import StartPage
 from ball import Ball
+from levels import Levels
 pygame.font.init()
 
 WINDOW = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 def main():
-    while StartPage.running:
-        StartPage.startPage() 
-
+    StartPage.startPage_running() 
+    Levels.levels_running()
+    
 
 
 
