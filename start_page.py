@@ -1,8 +1,16 @@
 import pygame
+import sys
 
 class StartPage():
     def __init__(self):
-        StartPage.running = True
-    
-    def startPage_running(self):
-        pass
+        self.running = True
+        self.clock = pygame.time.Clock()
+
+    def startPage_main(self):
+        self.running = True
+        while self.running:
+            self.clock.tick(FPS)
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
