@@ -3,7 +3,7 @@ from constants import *
 from start_page import StartPage
 from ball import Ball
 from levels import Levels
-from end_page import *
+from end_page import EndPage
 from draw import *
 from power_bar import *
 pygame.font.init()
