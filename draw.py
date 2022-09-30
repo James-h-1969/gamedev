@@ -5,7 +5,7 @@ from constants import *
 class Draw():
     def __init__(self):
         pass
-    def draw_window(self, WINDOW, ball, power):
+    def draw_level(self, WINDOW, ball, power, shots):
         #background
         WINDOW.fill(BABY_BLUE)
         
@@ -21,8 +21,8 @@ class Draw():
         pygame.draw.rect(WINDOW, power.colour, power.rect)
 
         #score
-        # score = SCORE_FONT.render("Stroke: " + str(ball.current_score), 1, BLACK)
-        # window.blit(score, (10, 10))
+        score = SCORE_FONT.render("Stroke: " + str(shots), 1, BLACK)
+        WINDOW.blit(score, (10, 10))
 
 
         pygame.display.update()

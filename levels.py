@@ -31,6 +31,7 @@ class Levels():
                     ball.initial_flight_speed = power.strength // 15
                     ball.setup_movement()
                     power.strength = 0
+                    self.shots += 1
                     ball.in_flight = True
             if ball.in_flight:
                 if ball.position.y - ball.y_speed <= SCREEN_HEIGHT//2 or (ball.direction > 0 and ball.x_speed > 0) or (ball.direction < 0 and ball.x_speed < 0):
@@ -41,7 +42,7 @@ class Levels():
             power.current_power_bar()
 
             ball.angle_line()
-            draw.draw_window(WINDOW, ball, power)
+            draw.draw_level(WINDOW, ball, power, self.shots)
 
 
 
