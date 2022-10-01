@@ -53,5 +53,5 @@ class Ball():
         if self.position.y - self.y_speed <= SCREEN_HEIGHT//2:
             self.position.y -= self.y_speed
         else:
-            self.y_speed = self.y_speed * -1 * 0.5
+            self.y_speed = self.y_speed * -1 * BOUNCE_CANCEL
             self.position.y -= self.y_speed

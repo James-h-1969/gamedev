@@ -24,5 +24,7 @@ class Draw():
         score = SCORE_FONT.render("Stroke: " + str(shots), 1, BLACK)
         WINDOW.blit(score, (10, 10))
 
-
         pygame.display.update()
+
+    def draw_start_page(self):
+        pass
