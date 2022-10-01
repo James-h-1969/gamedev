@@ -30,16 +30,22 @@ class Draw():
 
         pygame.display.update()
 
-    def draw_start_page_intro(self, WINDOW, text, x_change):
+    def start_page_background(self, WINDOW, cloud1, cloud2):
         WINDOW.blit(self.start_and_end_background, (0, 0))
+        if cloud1.show:
+            WINDOW.blit(cloud1.image, (cloud1.x, cloud1.y))
+            cloud1.movement()
+        if cloud2.show:
+            WINDOW.blit(cloud2.image, (cloud2.x, cloud2.y))
+            cloud2.movement()
+
+    def draw_start_page_intro(self, WINDOW, text):
         text_display = INTRO_FONT.render(str(text), 1, BLACK)
         WINDOW.blit(text_display, (20, 550))
         pygame.display.update()
-
-    def draw_start_screen(self, WINDOW, i, start_page):
-        # BACKGROUND #
-        WINDOW.blit(self.start_and_end_background, (0, 0))
-
+ 
+    
+    def draw_start_screen(self, WINDOW, i):
         # START BUTTON #
         x, y = pygame.mouse.get_pos()
         if x > 40 and x < 270 and y > SCREEN_HEIGHT - 120 and y < SCREEN_HEIGHT - 55:
