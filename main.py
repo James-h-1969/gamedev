@@ -20,7 +20,7 @@ def main():
     draw = Draw()
     power = PowerBar()
     
-    start_page.startPage_main(WINDOW) 
+    start_page.startPage_main(WINDOW, draw) 
     level.levels_main(WINDOW, ball, draw, power)
     pygame.quit()
 

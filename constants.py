@@ -31,3 +31,4 @@ BLACK = (0, 0, 0)
 
 ### SCORE ###
 SCORE_FONT = pygame.font.SysFont('Arial', 20)
+INTRO_FONT = pygame.font.SysFont('Arial', 35)

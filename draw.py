@@ -26,5 +26,8 @@ class Draw():
 
         pygame.display.update()
 
-    def draw_start_page(self):
-        pass
+    def draw_start_page(self, WINDOW, text, x_change):
+        WINDOW.fill(BLACK)
+        text_display = INTRO_FONT.render(str(text), 1, WHITE)
+        WINDOW.blit(text_display, (x_change, SCREEN_HEIGHT//2-50))
+        pygame.display.update()
