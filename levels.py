@@ -10,7 +10,7 @@ class Levels():
         self.space_down = False
         self.shots = 0
 
-    def levels_main(self, WINDOW, ball, draw, power):
+    def levels_main(self, WINDOW, ball, drawing, power):
         self.running = True
 
         while self.running:
@@ -42,7 +42,7 @@ class Levels():
             power.current_power_bar()
 
             ball.angle_line()
-            draw.draw_level(WINDOW, ball, power, self.shots)
+            drawing.draw_level(WINDOW, ball, power, self.shots)
 
 
 

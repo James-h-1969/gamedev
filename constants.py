@@ -1,4 +1,5 @@
 import pygame
+import os
 pygame.font.init()
 
 ###SCREEN###
@@ -31,4 +32,14 @@ BLACK = (0, 0, 0)
 
 ### SCORE ###
 SCORE_FONT = pygame.font.SysFont('Arial', 20)
-INTRO_FONT = pygame.font.SysFont('Arial', 35)
+INTRO_FONT = pygame.font.Font('img/fonts/Minecraft.ttf', 30)
+START_FONT_SMALL = pygame.font.Font('img/fonts/Minecraft.ttf', 60)
+START_FONT_LARGE = pygame.font.Font('img/fonts/Minecraft.ttf', 75)
+
+## ANIMATION ##
+ANIMATION_SPEED = 0.2
+DELAY = 1000
+
+## LOGO ##
+LOGO_HEIGHT = 480
+LOGO_WIDTH = 1000

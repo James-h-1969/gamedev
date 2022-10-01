@@ -17,11 +17,11 @@ def main():
     level = Levels()
     end_page = EndPage()
     ball = Ball(SCREEN_WIDTH//2, SCREEN_HEIGHT//2)
-    draw = Draw()
+    drawing = Draw()
     power = PowerBar()
     
-    start_page.startPage_main(WINDOW, draw) 
-    level.levels_main(WINDOW, ball, draw, power)
+    start_page.startPage_main(WINDOW, drawing) 
+    level.levels_main(WINDOW, ball, drawing, power)
     pygame.quit()
 
 if __name__ == "__main__":
