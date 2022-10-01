@@ -8,6 +8,9 @@ class Draw():
         self.start_and_end_background = pygame.image.load(os.path.join('img', 'end-background.png')).convert()
         self.logo = pygame.image.load(os.path.join('img', 'scuffed_logo.png')).convert_alpha()
         self.logo = pygame.transform.scale(self.logo, (LOGO_WIDTH, LOGO_HEIGHT))
+        self.help_img = pygame.transform.scale(pygame.image.load(os.path.join('img', 'help.jpg')).convert(), (HELP_WIDTH, HELP_HEIGHT))
+        self.cross_img = pygame.transform.scale(pygame.image.load(os.path.join('img', 'cross.png')).convert_alpha(), (100, 100))
+        self.show_help = False
         
     def draw_level(self, WINDOW, ball, power, shots):
         #background
@@ -64,10 +67,32 @@ class Draw():
             text_placement = (50, SCREEN_HEIGHT - 110)
             start = START_FONT_SMALL.render("START", 1, BLACK)
             WINDOW.blit(start, text_placement)
-        
+
+        # HELP BUTTON #
+        if x > SCREEN_WIDTH - 270 - 40 and x < SCREEN_WIDTH - 40 and y > SCREEN_HEIGHT - 120 and y < SCREEN_HEIGHT - 55:
+            help_rect = pygame.Rect(SCREEN_WIDTH - 170 - 60, SCREEN_HEIGHT - 140, 210, 75)    
+            border_rect = pygame.Rect(SCREEN_WIDTH - 170 - 65, SCREEN_HEIGHT - 145, 220 ,85)
+            pygame.draw.rect(WINDOW, RED, border_rect)
+            pygame.draw.rect(WINDOW, WHITE, help_rect)
+            text_placement = (SCREEN_WIDTH - 170 - 52, SCREEN_HEIGHT - 130)  
+            start = START_FONT_LARGE.render("HELP", 1, BLACK)
+            WINDOW.blit(start, text_placement)
+
+        else:
+            help_rect = pygame.Rect(SCREEN_WIDTH - 170 - 40, SCREEN_HEIGHT - 120, 170, 65)    
+            border_rect = pygame.Rect(SCREEN_WIDTH - 170 - 45, SCREEN_HEIGHT - 125, 180 ,75)
+            pygame.draw.rect(WINDOW, RED, border_rect)
+            pygame.draw.rect(WINDOW, WHITE, help_rect)
+            text_placement = (SCREEN_WIDTH - 170 - 30, SCREEN_HEIGHT - 110)  
+            start = START_FONT_SMALL.render("HELP", 1, BLACK)
+            WINDOW.blit(start, text_placement)
 
         # LOGO #
         self.logo = pygame.transform.scale(self.logo, (LOGO_WIDTH*(i/10), LOGO_HEIGHT*(i/10)))
         WINDOW.blit(self.logo, (15, 20))
+
+        if self.show_help:
+            WINDOW.blit(self.help_img, (60, 50))
+            WINDOW.blit(self.cross_img, (670, 65))
 
         pygame.display.update()
