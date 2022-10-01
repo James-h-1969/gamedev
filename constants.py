@@ -50,3 +50,7 @@ CLOUD_SPEED = 2
 ## HELP ##
 HELP_WIDTH = 700
 HELP_HEIGHT = 400
+
+## PLAY AGAIN
+PLAYAGAIN_FONT_SMALL = pygame.font.Font('img/fonts/Minecraft.ttf', 30)
+PLAYAGAIN_FONT_LARGE = pygame.font.Font('img/fonts/Minecraft.ttf', 40)

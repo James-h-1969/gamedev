@@ -96,3 +96,17 @@ class Draw():
             WINDOW.blit(self.cross_img, (670, 65))
 
         pygame.display.update()
+
+
+
+    def draw_endscreen(self, WINDOW):
+        # PLAY AGAIN?
+        x, y = pygame.mouse.get_pos()
+        if 1: #gonna actually do this
+            text_placement = (30, SCREEN_HEIGHT - 130)  
+            playagain = PLAYAGAIN_FONT_LARGE.render("PLAY AGAIN", 1, BLACK)
+            WINDOW.blit(playagain, text_placement)
+        else:
+            text_placement = (50, SCREEN_HEIGHT - 110)
+            playagain = PLAYAGAIN_FONT_SMALL.render("PLAY AGAIN", 1, BLACK)
+            WINDOW.blit(playagain, text_placement)

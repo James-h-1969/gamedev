@@ -20,8 +20,12 @@ def main():
     drawing = Draw()
     power = PowerBar()
     
-    start_page.startPage_main(WINDOW, drawing) 
-    level.levels_main(WINDOW, ball, drawing, power)
+    #start_page.startPage_main(WINDOW, drawing) 
+    #level.levels_main(WINDOW, ball, drawing, power)
+    end_page.set_shots(4)
+    end_page.endPage_main(WINDOW)
+    
+
     pygame.quit()
 
 if __name__ == "__main__":
