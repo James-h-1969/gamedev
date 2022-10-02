@@ -44,10 +44,14 @@ class Ball():
 
     def movement(self):
         if self.hit_horizontal:
-            difference_in_y = self.position.y - self.current_collision_rect.center[1]
+            difference_in_y = self.position.y - self.current_collision_rect.top
             if (difference_in_y > 0 and self.y_speed > 0) or (difference_in_y < 0 and self.y_speed < 0):
-                self.y_speed = self.y_speed * -1 * BOUNCE_CANCEL 
+                if self.y_speed < 0:
+                    self.y_speed = self.y_speed * -1 * BOUNCE_CANCEL 
+                else:
+                    self.y_speed = self.y_speed * -1
                 self.position.y -= self.y_speed
+                
             else:
                 pass
         elif self.position.y < 590 :

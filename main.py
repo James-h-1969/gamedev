@@ -16,7 +16,7 @@ def main():
     start_page = StartPage()
     level = Levels()
     end_page = EndPage()
-    ball = Ball(30, 590)
+    ball = Ball(30,  590)
     drawing = Draw()
     power = PowerBar()
     
