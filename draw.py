@@ -12,6 +12,7 @@ class Draw():
         self.cross_img = pygame.transform.scale(pygame.image.load(os.path.join('img', 'cross.png')).convert_alpha(), (100, 100))
         self.level_background = pygame.image.load(os.path.join('img', 'level_background.png')).convert()
         self.flag = pygame.transform.scale(pygame.image.load(os.path.join('img', 'golf_flag.png')).convert_alpha(), (120, 160))
+        self.water = pygame.transform.scale(pygame.image.load(os.path.join('img', 'water.png')).convert_alpha(), (600, 800))
         self.show_help = False
         
     def draw_level(self, WINDOW, ball, power, shots, walls):
@@ -25,6 +26,9 @@ class Draw():
 
         #flag
         WINDOW.blit(self.flag, (400, 470))
+
+        #water
+        WINDOW.blit(self.water,(140, -235))
         
         #ball
         pygame.draw.circle(WINDOW, WHITE, (ball.position.x, ball.position.y), ball.radius)

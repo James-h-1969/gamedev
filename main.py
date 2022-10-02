@@ -20,7 +20,7 @@ def main():
     drawing = Draw()
     power = PowerBar()
     
-    #start_page.startPage_main(WINDOW, drawing) 
+    start_page.startPage_main(WINDOW, drawing) 
     level.levels_main(WINDOW, ball, drawing, power)
     end_page.set_shots(level.shots)
     end_page.endPage_main(WINDOW)
@@ -30,5 +30,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    trial = EndPage()
-    trial.endPage_main(WINDOW)

@@ -18,6 +18,8 @@ class Ball():
         self.hit_horizontal = False
         self.Rect = pygame.Rect(0, 0, 0, 0)
         self.current_collision_rect = pygame.Rect(0, 0, 0, 0)
+        self.old_x = 0
+        self.old_y = 0
 
     def angle_line(self):
         if not self.in_flight:
@@ -36,6 +38,8 @@ class Ball():
     def setup_movement(self):
         self.x_speed = self.initial_flight_speed * math.cos(self.angle_to_mouse)
         self.y_speed = abs(self.initial_flight_speed * math.sin(self.angle_to_mouse))
+        self.old_x = self.position.x
+        self.old_y = self.position.y
         if self.x_speed > 0:
             self.direction = 1
         else:
