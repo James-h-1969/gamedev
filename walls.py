@@ -6,8 +6,8 @@ from constants import*
 
 class Walls():
     def __init__(self):
-        self.horizontal_walls = []
-        self.vertical_walls = []
+        self.h_rect_list = []
+
 
     def initialise_walls(self):
         H_RECT_1 = pygame.Rect(0, 450, H_RECT_WIDTH, H_RECT_HEIGHT)
@@ -15,24 +15,24 @@ class Walls():
         H_RECT_3 = pygame.Rect(0, 170, H_RECT_WIDTH, H_RECT_HEIGHT)
         H_RECT_4 = pygame.Rect(SCREEN_WIDTH/2, 200, H_RECT_WIDTH, H_RECT_HEIGHT)
         H_RECT_5 = pygame.Rect(SCREEN_WIDTH - H_RECT_WIDTH, 350, H_RECT_WIDTH, H_RECT_HEIGHT)
-
-        V_RECT = pygame.Rect(SCREEN_WIDTH/2 - V_RECT_WIDTH, 150, V_RECT_WIDTH, V_RECT_HEIGHT)
-
         #List of horizontal rectangles
         self.h_rect_list = [H_RECT_1, H_RECT_2, H_RECT_3, H_RECT_4, H_RECT_5]
         #Vertical wall list
-        self.v_wall = [V_RECT.top, V_RECT.left, V_RECT.width, V_RECT.height]
+        self.v_rect = [pygame.Rect(SCREEN_WIDTH/2 - V_RECT_WIDTH, 150, V_RECT_WIDTH, V_RECT_HEIGHT)]
+
 
     def check_collisions(self, ball):
         if (ball.rect).collidelist(self.h_rect_list) >= 0:
-            ball.hit_bottom = True
+            ball.hit_horizontal = True
+            print("JUST COLLIDED!!!!")
         else:
-            ball.hit_bottom = False
+            ball.hit_horizontal = False
        
-        if (ball.rect).collidelist(self.left_rect) >= 0:
-            ball.hit_left = True
+        if (ball.rect).collidelist(self.v_rect) >= 0:
+            ball.hit_vert = True
+            print("JUST COLLIDED!!!!")
         else:
-            ball.hit_left = False
+            ball.hit_vert = False
             
 
     # def collision(rect_left, rect_top, width, height,   # rectangle definition

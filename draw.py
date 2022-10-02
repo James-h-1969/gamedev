@@ -10,11 +10,21 @@ class Draw():
         self.logo = pygame.transform.scale(self.logo, (LOGO_WIDTH, LOGO_HEIGHT))
         self.help_img = pygame.transform.scale(pygame.image.load(os.path.join('img', 'help.jpg')).convert(), (HELP_WIDTH, HELP_HEIGHT))
         self.cross_img = pygame.transform.scale(pygame.image.load(os.path.join('img', 'cross.png')).convert_alpha(), (100, 100))
+        self.level_background = pygame.image.load(os.path.join('img', 'level_background.png')).convert()
+        self.flag = pygame.transform.scale(pygame.image.load(os.path.join('img', 'golf_flag.png')).convert_alpha(), (120, 160))
         self.show_help = False
         
-    def draw_level(self, WINDOW, ball, power, shots):
+    def draw_level(self, WINDOW, ball, power, shots, walls):
         #background
-        WINDOW.fill(BABY_BLUE)
+        WINDOW.blit(self.level_background, (0, 0))
+
+        #walls
+        for rectangle in walls.h_rect_list:
+            pygame.draw.rect(WINDOW, DARK_GREEN, rectangle)
+        pygame.draw.rect(WINDOW, DARK_GREEN, walls.v_rect[0])
+
+        #flag
+        WINDOW.blit(self.flag, (400, 470))
         
         #ball
         pygame.draw.circle(WINDOW, WHITE, (ball.position.x, ball.position.y), ball.radius)
@@ -110,9 +120,4 @@ class Draw():
             text_placement = (50, SCREEN_HEIGHT - 110)
             playagain = PLAYAGAIN_FONT_SMALL.render("PLAY AGAIN", 1, BLACK)
             WINDOW.blit(playagain, text_placement)
-
-    def draw_rectangles(WINDOW, walls):
-        for rectangle in h_rect_list:
-            pygame.draw.rect(WINDOW, DARK_GREEN, rectangle)
-            pygame.draw.rect(WINDOW, DARK_GREEN, V_RECT)
 

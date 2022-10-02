@@ -16,13 +16,13 @@ def main():
     start_page = StartPage()
     level = Levels()
     end_page = EndPage()
-    ball = Ball(SCREEN_WIDTH//2, SCREEN_HEIGHT//2)
+    ball = Ball(30, 590)
     drawing = Draw()
     power = PowerBar()
     
     #start_page.startPage_main(WINDOW, drawing) 
-    #level.levels_main(WINDOW, ball, drawing, power)
-    end_page.set_shots(4)
+    level.levels_main(WINDOW, ball, drawing, power)
+    end_page.set_shots(level.shots)
     end_page.endPage_main(WINDOW)
     
 

@@ -29,8 +29,10 @@ ORANGE = (255, 165, 0)
 YELLOW = (255, 255, 0)
 GREEN = (0, 255, 0)
 BLACK = (0, 0, 0)
+DARK_GREEN = (0, 100, 0)
 
 ### SCORE ###
+
 SCORE_FONT = pygame.font.SysFont('Arial', 20)
 INTRO_FONT = pygame.font.Font('img/fonts/Minecraft.ttf', 30)
 START_FONT_SMALL = pygame.font.Font('img/fonts/Minecraft.ttf', 60)
@@ -57,6 +59,6 @@ PLAYAGAIN_FONT_LARGE = pygame.font.Font('img/fonts/Minecraft.ttf', 40)
 
 ## RECTANGLES ##
 H_RECT_WIDTH = 150
-H_RECT_HEIGHT = 5
-V_RECT_WIDTH = 5
+H_RECT_HEIGHT = 15
+V_RECT_WIDTH = 15
 V_RECT_HEIGHT = 445
