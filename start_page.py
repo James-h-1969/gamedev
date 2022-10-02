@@ -61,6 +61,8 @@ class StartPage():
         
 
     def startPage_main(self, WINDOW, drawing):   
+        pygame.mixer.music.load('img/sound.wav')
+        pygame.mixer.music.play(-1)
         text = ""
         cloud1 = Cloud(30, randint(20, 50))  
         cloud2 = Cloud(300, randint(50, 70))
@@ -78,6 +80,7 @@ class StartPage():
                 x, y = pygame.mouse.get_pos()
                 if x > 40 and x < 270 and y > SCREEN_HEIGHT - 120 and y < SCREEN_HEIGHT - 55:
                     self.running = False
+                    pygame.mixer.music.fadeout(1000)
                 if x > SCREEN_WIDTH - 270 - 40 and x < SCREEN_WIDTH - 40 and y > SCREEN_HEIGHT - 120 and y < SCREEN_HEIGHT - 55:
                     drawing.show_help = True
                 if drawing.show_help and x > 670 and x < 670 + 100 and y > 65 and y < 65+100:
