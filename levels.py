@@ -13,7 +13,7 @@ class Levels():
         self.jump_off = False
 
     def levels_main(self, WINDOW, ball, drawing, power):
-        pygame.mixer.music.load('img/3 headed goat.wav')
+        pygame.mixer.music.load('img/legit 3 head.wav')
         pygame.mixer.music.play(-1)
         self.running = True
         walls = Walls()
