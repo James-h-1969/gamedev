@@ -48,11 +48,12 @@ class Levels():
 
 
             if ball.in_flight:
-                if (ball.direction > 0 and ball.x_speed > 0) or (ball.direction < 0 and ball.x_speed < 0):
+                if (ball.direction > 0 and ball.x_speed > 0) or (ball.direction < 0 and ball.x_speed < 0) or self.hit_vert:
                     if self.jump_off:
                         self.hit_vert = False
                         self.hit_horizontal = False
                         self.jump_off = False
+                        ball.position.y -= 10
                     else:
                         walls.check_collisions(ball)
                     if ball.position.y > 590:

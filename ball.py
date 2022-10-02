@@ -17,6 +17,7 @@ class Ball():
         self.hit_vert = False
         self.hit_horizontal = False
         self.Rect = pygame.Rect(0, 0, 0, 0)
+        self.current_collision_rect = pygame.Rect(0, 0, 0, 0)
 
     def angle_line(self):
         if not self.in_flight:
@@ -42,20 +43,25 @@ class Ball():
 
 
     def movement(self):
+        if self.hit_horizontal:
+            difference_in_y = self.position.y - self.current_collision_rect.center[1]
+            if (difference_in_y > 0 and self.y_speed > 0) or (difference_in_y < 0 and self.y_speed < 0):
+                self.y_speed = self.y_speed * -1 * BOUNCE_CANCEL 
+                self.position.y -= self.y_speed
+            else:
+                pass
+        elif self.position.y < 590 :
+            self.position.y -= self.y_speed       
+       
         if self.position.x + self.x_speed - 20 < 0 or self.position.x + self.x_speed + 2 * self.radius + 20> SCREEN_WIDTH or self.hit_vert:
             self.x_speed = self.x_speed * -1
             self.direction = self.direction * - 1
 
         self.position.x += self.x_speed
 
-        if (self.hit_horizontal and self.direction > 0):
+        if (self.hit_horizontal and self.direction > 0) or (self.position.y >= 590 and self.direction > 0):
             self.x_speed -= FRICTION
-        elif (self.hit_horizontal and self.direction < 0):
+        elif (self.hit_horizontal and self.direction < 0) or (self.position.y >= 590 and self.direction < 0):
             self.x_speed += FRICTION
         
-        if not self.hit_horizontal and self.position.y < 590:
-            self.position.y -= self.y_speed
-        else:
-            self.y_speed = self.y_speed * -1 * BOUNCE_CANCEL
-            self.position.y -= self.y_speed
         self.y_speed -= 1

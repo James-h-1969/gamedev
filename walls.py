@@ -6,7 +6,7 @@ from constants import*
 
 class Walls():
     def __init__(self):
-        self.h_rect_list = []
+        pass
 
 
     def initialise_walls(self):
@@ -24,13 +24,13 @@ class Walls():
     def check_collisions(self, ball):
         if (ball.rect).collidelist(self.h_rect_list) >= 0:
             ball.hit_horizontal = True
-            print("JUST COLLIDED!!!!")
+            ball.current_collision_rect = self.h_rect_list[(ball.rect).collidelist(self.h_rect_list)]
         else:
             ball.hit_horizontal = False
        
         if (ball.rect).collidelist(self.v_rect) >= 0:
             ball.hit_vert = True
-            print("JUST COLLIDED!!!!")
+            ball.current_collision_rect = self.v_rect[0]
         else:
             ball.hit_vert = False
             
