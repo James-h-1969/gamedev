@@ -14,6 +14,9 @@ class Ball():
         self.x_speed = 0
         self.y_speed = 0
         self.shots = 0
+        self.hit_vert = False
+        self.hit_horizontal = False
+        self.Rect = pygame.Rect(0, 0, 0, 0)
 
     def angle_line(self):
         if not self.in_flight:
@@ -26,8 +29,9 @@ class Ball():
             elif mouse_pos[0] >= self.center.x:
                 self.angle_line_vect.xy = (40, 0)
             else:
-                self.angle_line_vect.xy = (-40, 0)
-
+                self.angle_line_vect.xy = (-40, 0)   
+    
+    
     def setup_movement(self):
         self.x_speed = self.initial_flight_speed * math.cos(self.angle_to_mouse)
         self.y_speed = abs(self.initial_flight_speed * math.sin(self.angle_to_mouse))
@@ -40,7 +44,7 @@ class Ball():
     def movement(self):
         self.y_speed -= 1
 
-        if self.position.x + self.x_speed - 20 < 0 or self.position.x + self.x_speed + 2 * self.radius + 20> SCREEN_WIDTH:
+        if self.position.x + self.x_speed - 20 < 0 or self.position.x + self.x_speed + 2 * self.radius + 20> SCREEN_WIDTH or self.hit_vert:
             self.x_speed = self.x_speed * -1
             self.direction = self.direction * - 1
 
@@ -50,7 +54,7 @@ class Ball():
             self.x_speed += FRICTION
 
         self.position.x += self.x_speed
-        if self.position.y - self.y_speed <= SCREEN_HEIGHT//2:
+        if not self.hit_top:
             self.position.y -= self.y_speed
         else:
             self.y_speed = self.y_speed * -1 * BOUNCE_CANCEL

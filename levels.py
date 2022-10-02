@@ -2,6 +2,7 @@ import pygame
 import sys
 from constants import *
 import math
+from walls import Walls
 
 class Levels():
     def __init__(self):
@@ -12,9 +13,10 @@ class Levels():
 
     def levels_main(self, WINDOW, ball, drawing, power):
         self.running = True
-
+        walls = Walls()
         while self.running:
             self.clock.tick(FPS)
+            ball.rect = pygame.Rect(ball.position.x, ball.position.y, ball.radius * 2, ball.radius * 2)
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -35,6 +37,7 @@ class Levels():
                     ball.in_flight = True
             if ball.in_flight:
                 if (ball.direction > 0 and ball.x_speed > 0) or (ball.direction < 0 and ball.x_speed < 0):
+                    walls.check_collisions(ball)
                     ball.movement()
                 else:
                     ball.in_flight = False

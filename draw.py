@@ -110,3 +110,9 @@ class Draw():
             text_placement = (50, SCREEN_HEIGHT - 110)
             playagain = PLAYAGAIN_FONT_SMALL.render("PLAY AGAIN", 1, BLACK)
             WINDOW.blit(playagain, text_placement)
+
+    def draw_rectangles(WINDOW, walls):
+        for rectangle in h_rect_list:
+            pygame.draw.rect(WINDOW, DARK_GREEN, rectangle)
+            pygame.draw.rect(WINDOW, DARK_GREEN, V_RECT)
+

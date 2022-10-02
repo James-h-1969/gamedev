@@ -54,3 +54,9 @@ HELP_HEIGHT = 400
 ## PLAY AGAIN
 PLAYAGAIN_FONT_SMALL = pygame.font.Font('img/fonts/Minecraft.ttf', 30)
 PLAYAGAIN_FONT_LARGE = pygame.font.Font('img/fonts/Minecraft.ttf', 40)
+
+## RECTANGLES ##
+H_RECT_WIDTH = 150
+H_RECT_HEIGHT = 5
+V_RECT_WIDTH = 5
+V_RECT_HEIGHT = 445
